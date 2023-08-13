@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Management Form</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+  }
+  h1 {
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+  table {
+    border-collapse: collapse;
+    margin: 20px;
+  }
+  th, td {
+    border: 1px solid black;
+    padding: 8px;
+  }
+  th {
+    background-color: #f2f2f2;
+  }
+  form {
+    margin: 20px;
+  }
+  label, input {
+    display: block;
+    margin-bottom: 10px;
+  }
+  button {
+    margin-top: 10px;
+  }
+</style>
+</head>
+<body>
+<h1>Student Management Form</h1>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Student Number</th>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Phone Number</th>
+    <th>Year of Entry</th>
+    <th>Units Enrolled</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>2023001</td>
+    <td>John Doe</td>
+    <td>123 Main St</td>
+    <td>555-1234</td>
+    <td>2023</td>
+    <td>5</td>
+  </tr>
+  <!-- Add more rows here with similar data -->
+</table>
+
+<form>
+  <label for="id">ID:</label>
+  <input type="text" id="id" name="id">
+
+  <label for="studentNumber">Student Number:</label>
+  <input type="text" id="studentNumber" name="studentNumber">
+
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name">
+
+  <label for="address">Address:</label>
+  <input type="text" id="address" name="address">
+
+  <label for="phoneNumber">Phone Number:</label>
+  <input type="text" id="phoneNumber" name="phoneNumber">
+
+  <label for="yearOfEntry">Year of Entry:</label>
+  <input type="text" id="yearOfEntry" name="yearOfEntry">
+
+  <label for="unitsEnrolled">Units Enrolled:</label>
+  <input type="text" id="unitsEnrolled" name="unitsEnrolled">
+
+  <button type="submit">Save</button>
+  <button type="button" onclick="clearForm()">Clear</button>
+</form>
+
+<script>
+function clearForm() {
+  document.querySelector("form").reset();
+}
+</script>
+</body>
+</html>
