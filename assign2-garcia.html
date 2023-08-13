@@ -39,7 +39,6 @@
 <h1>Student Management Form</h1>
 <table>
   <tr>
-    <th>ID</th>
     <th>Student Number</th>
     <th>Name</th>
     <th>Address</th>
@@ -48,7 +47,6 @@
     <th>Units Enrolled</th>
   </tr>
   <tr>
-    <td>1</td>
     <td>67890</td>
     <td>joseph</td>
     <td>123 Main St</td>
@@ -57,7 +55,6 @@
     <td>5</td>
   </tr>
   <tr>
-    <td>2</td>
     <td>12345</td>
     <td>aramis</td>
     <td>pasig</td>
@@ -66,7 +63,6 @@
     <td>5</td>
   </tr>
   <tr>
-    <td>3</td>
     <td>13579</td>
     <td>maui</td>
     <td>marikina</td>
@@ -75,7 +71,6 @@
     <td>5</td>
   </tr>
   <tr>
-    <td>4</td>
     <td>24680</td>
     <td>ziggy</td>
     <td>makati</td>
@@ -84,7 +79,6 @@
     <td>5</td>
   </tr>
   <tr>
-    <td>5</td>
     <td>125689</td>
     <td>gelo</td>
     <td>cainta</td>
@@ -93,7 +87,6 @@
     <td>5</td>
   </tr>
   <tr>
-    <td>6</td>
     <td>236790</td>
     <td>jom</td>
     <td>taytay</td>
@@ -102,7 +95,6 @@
     <td>5</td>
   </tr>
   <tr>
-    <td>7</td>
     <td>09876</td>
     <td>bea</td>
     <td>antipolo</td>
@@ -111,7 +103,6 @@
     <td>5</td>
   </tr>
   <tr>
-    <td>8</td>
     <td>54321</td>
     <td>aga</td>
     <td>mandaluyong</td>
@@ -120,7 +111,6 @@
     <td>5</td>
   </tr>
   <tr>
-    <td>9</td>
     <td>08642</td>
     <td>kyla</td>
     <td>ortigas</td>
@@ -129,7 +119,6 @@
     <td>5</td>
   </tr>
   <tr>
-    <td>10</td>
     <td>97531</td>
     <td>sofia</td>
     <td>paranaque</td>
@@ -140,9 +129,7 @@
   <!-- Add more rows here with similar data -->
 </table>
 
-<form>
-  <label for="id">ID:</label>
-  <input type="text" id="id" name="id">
+<div class="container">
 
   <label for="studentNumber">Student Number:</label>
   <input type="text" id="studentNumber" name="studentNumber">
@@ -162,31 +149,52 @@
   <label for="unitsEnrolled">Units Enrolled:</label>
   <input type="text" id="unitsEnrolled" name="unitsEnrolled">
 
-  <button type="submit">Save</button>
+  <input type="button" name="button" id="btn" value="Add" onclick="AddRow()">
+
   <button type="button" onclick="clearForm()">Clear</button>
-</form>
+</div>
 
 <script>
-    function saveStudent() {
-        const id = document.getElementById("id").value;
-        const studentNumber = document.getElementById("studentNumber").value;
-        const name = document.getElementById("name").value;
-        const address = document.getElementById("address").value;
-        const phoneNumber = document.getElementById("phoneNumber").value;
-        const yearOfEntry = document.getElementById("yearOfEntry").value;
-        const unitsEnrolled = document.getElementById("unitsEnrolled").value;
-      
-        const table = document.getElementById("studentTable");
-        const newRow = table.insertRow(-1);
-        const cells = [id, studentNumber, name, address, phoneNumber, yearOfEntry, unitsEnrolled];
-      
-        for (const cellData of cells) {
-          const cell = newRow.insertCell();
-          cell.appendChild(document.createTextNode(cellData));
-        }
-        
-        clearForm();
-      }
+  var list1 = [];
+  var list2 = [];
+  var list3 = [];
+  var list4 = [];
+  var list5 = [];
+  var list6 = [];
+
+  var n = 1;
+  var x = 0;
+
+  function AddRow(){
+
+    var AddRown = document.getElementById('show');
+    var NewRow = AddRown.insertRow(n);
+
+    list1[x] = document.getElementById("studentNumber").value;
+    list2[x] = document.getElementById("name").value;
+    list3[x] = document.getElementById("address").value;
+    list4[x] = document.getElementById("phoneNumber").value;
+    list5[x] = document.getElementById("yearOfEntry").value;
+    list6[x] = document.getElementById("unitsEnrolled").value;
+
+    var cel1 = NewRow.insertCell(0);
+    var cel2 = NewRow.insertCell(1);
+    var cel3 = NewRow.insertCell(2);
+    var cel4 = NewRow.insertCell(3);
+    var cel5 = NewRow.insertCell(4);
+    var cel6 = NewRow.insertCell(5);
+
+
+    cel1.innerHTML = list1[x];
+    cel2.innerHTML = list2[x];
+    cel3.innerHTML = list3[x];
+    cel4.innerHTML = list4[x];
+    cel5.innerHTML = list5[x];
+    cel6.innerHTML = list6[x];
+
+    n++;
+    x++;
+  }
       
       function clearForm() {
         document.getElementById("studentForm").reset();
