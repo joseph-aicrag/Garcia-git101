@@ -49,10 +49,91 @@
   </tr>
   <tr>
     <td>1</td>
-    <td>2023001</td>
-    <td>John Doe</td>
+    <td>67890</td>
+    <td>joseph</td>
     <td>123 Main St</td>
     <td>555-1234</td>
+    <td>2023</td>
+    <td>5</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>12345</td>
+    <td>aramis</td>
+    <td>pasig</td>
+    <td>555-5678</td>
+    <td>2023</td>
+    <td>5</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>13579</td>
+    <td>maui</td>
+    <td>marikina</td>
+    <td>555-0987</td>
+    <td>2023</td>
+    <td>5</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>24680</td>
+    <td>ziggy</td>
+    <td>makati</td>
+    <td>555-6543</td>
+    <td>2023</td>
+    <td>5</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>125689</td>
+    <td>gelo</td>
+    <td>cainta</td>
+    <td>555-2468</td>
+    <td>2023</td>
+    <td>5</td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>236790</td>
+    <td>jom</td>
+    <td>taytay</td>
+    <td>555-1359</td>
+    <td>2023</td>
+    <td>5</td>
+  </tr>
+  <tr>
+    <td>7</td>
+    <td>09876</td>
+    <td>bea</td>
+    <td>antipolo</td>
+    <td>555-2222</td>
+    <td>2023</td>
+    <td>5</td>
+  </tr>
+  <tr>
+    <td>8</td>
+    <td>54321</td>
+    <td>aga</td>
+    <td>mandaluyong</td>
+    <td>555-1111</td>
+    <td>2023</td>
+    <td>5</td>
+  </tr>
+  <tr>
+    <td>9</td>
+    <td>08642</td>
+    <td>kyla</td>
+    <td>ortigas</td>
+    <td>555-0000</td>
+    <td>2023</td>
+    <td>5</td>
+  </tr>
+  <tr>
+    <td>10</td>
+    <td>97531</td>
+    <td>sofia</td>
+    <td>paranaque</td>
+    <td>555-8425</td>
     <td>2023</td>
     <td>5</td>
   </tr>
@@ -86,9 +167,30 @@
 </form>
 
 <script>
-function clearForm() {
-  document.querySelector("form").reset();
-}
+    function saveStudent() {
+        const id = document.getElementById("id").value;
+        const studentNumber = document.getElementById("studentNumber").value;
+        const name = document.getElementById("name").value;
+        const address = document.getElementById("address").value;
+        const phoneNumber = document.getElementById("phoneNumber").value;
+        const yearOfEntry = document.getElementById("yearOfEntry").value;
+        const unitsEnrolled = document.getElementById("unitsEnrolled").value;
+      
+        const table = document.getElementById("studentTable");
+        const newRow = table.insertRow(-1);
+        const cells = [id, studentNumber, name, address, phoneNumber, yearOfEntry, unitsEnrolled];
+      
+        for (const cellData of cells) {
+          const cell = newRow.insertCell();
+          cell.appendChild(document.createTextNode(cellData));
+        }
+        
+        clearForm();
+      }
+      
+      function clearForm() {
+        document.getElementById("studentForm").reset();
+      }
 </script>
 </body>
 </html>
